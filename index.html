@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>🩺 La Salud – Español Grado 7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+    margin: 0;
+}
+
+header {
+    background-color: #1565c0;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+section {
+    background: white;
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 980px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+h2 {
+    color: #1565c0;
+}
+
+.exercise {
+    background: #f4f9ff;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 6px solid #64b5f6;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 8px;
+    padding: 8px 16px;
+    background: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d47a1;
+}
+
+.feedback {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.correct { color: green; }
+.incorrect { color: red; }
+
+select, input {
+    padding: 6px;
+    margin-top: 6px;
+    font-size: 1em;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #eeeeee;
+}
+</style>
+
+<script>
+function checkAnswer(id, correct) {
+    const user = document.getElementById(id).value.toLowerCase();
+    const fb = document.getElementById(id + "-fb");
+    if (user === correct) {
+        fb.innerHTML = "✅ ¡Muy bien!";
+        fb.className = "feedback correct";
+    } else {
+        fb.innerHTML = "❌ Intenta otra vez";
+        fb.className = "feedback incorrect";
+    }
+}
+</script>
+</head>
+
+<body>
+
+<header>
+<h1>🩺 La Salud en Español</h1>
+<p>📘 Nivel emergente – Grado 7</p>
+</header>
+
+<!-- EJERCICIO 1 -->
+<section>
+<h2>🧠 Ejercicio 1: Completa (Tengo / Estoy)</h2>
+
+<div class="exercise">❄️ Tengo <input id="e1"> porque no uso una chaqueta.
+<button onclick="checkAnswer('e1','frío')">Comprobar</button><div id="e1-fb"></div></div>
+
+<div class="exercise">🔥 Tengo <input id="e2"> porque sudo mucho.
+<button onclick="checkAnswer('e2','calor')">Comprobar</button><div id="e2-fb"></div></div>
+
+<div class="exercise">😴 Tengo <input id="e3"> porque duermo poco.
+<button onclick="checkAnswer('e3','sueño')">Comprobar</button><div id="e3-fb"></div></div>
+
+<div class="exercise">💼 Estoy <input id="e4"> porque trabajo mucho.
+<button onclick="checkAnswer('e4','cansado')">Comprobar</button><div id="e4-fb"></div></div>
+
+<div class="exercise">🍞 Tengo <input id="e5"> porque no desayuno.
+<button onclick="checkAnswer('e5','hambre')">Comprobar</button><div id="e5-fb"></div></div>
+
+<div class="exercise">💧 Tengo <input id="e6"> porque no bebo agua.
+<button onclick="checkAnswer('e6','sed')">Comprobar</button><div id="e6-fb"></div></div>
+</section>
+
+<!-- EJERCICIO 2 -->
+<section>
+<h2>✍️ Ejercicio 2: Completa la acción</h2>
+
+<div class="exercise">❄️ Tengo frío. <strong>Debo</strong> <input id="s1">.
+<button onclick="checkAnswer('s1','usar una chaqueta')">Comprobar</button><div id="s1-fb"></div></div>
+
+<div class="exercise">😴 Tengo sueño. <strong>Necesito</strong> <input id="s2">.
+<button onclick="checkAnswer('s2','dormir más')">Comprobar</button><div id="s2-fb"></div></div>
+
+<div class="exercise">🍞 Tengo hambre. <strong>Necesito</strong> <input id="s3">.
+<button onclick="checkAnswer('s3','desayunar')">Comprobar</button><div id="s3-fb"></div></div>
+
+<div class="exercise">💧 Tengo sed. <strong>Debo</strong> <input id="s4">.
+<button onclick="checkAnswer('s4','beber agua')">Comprobar</button><div id="s4-fb"></div></div>
+
+<div class="exercise">🤕 Tengo dolor de cabeza. <strong>Tengo que</strong> <input id="s5">.
+<button onclick="checkAnswer('s5','tomar una aspirina')">Comprobar</button><div id="s5-fb"></div></div>
+</section>
+
+<!-- EJERCICIO 3 -->
+<section>
+<h2>✅ Ejercicio 3: Selección múltiple (Problema → Acción)</h2>
+
+<div class="exercise">🔥 Tengo calor porque sudo mucho.
+<select id="m1">
+<option value="">---</option>
+<option value="necesito beber agua">Necesito beber agua</option>
+<option value="debo usar chaqueta">Debo usar chaqueta</option>
+<option value="tengo que usar abrigo">Tengo que usar abrigo</option>
+</select>
+<button onclick="checkAnswer('m1','necesito beber agua')">Comprobar</button><div id="m1-fb"></div></div>
+
+<div class="exercise">❄️ Estoy resfriado porque no uso abrigo.
+<select id="m2">
+<option value="">---</option>
+<option value="tengo que usar abrigo">Tengo que usar abrigo</option>
+<option value="necesito beber agua">Necesito beber agua</option>
+<option value="debo dormir">Debo dormir</option>
+</select>
+<button onclick="checkAnswer('m2','tengo que usar abrigo')">Comprobar</button><div id="m2-fb"></div></div>
+
+<div class="exercise">😴 Tengo sueño porque duermo poco.
+<select id="m3">
+<option value="">---</option>
+<option value="debo dormir más">Debo dormir más</option>
+<option value="necesito trabajar">Necesito trabajar</option>
+<option value="tengo que usar chaqueta">Tengo que usar chaqueta</option>
+</select>
+<button onclick="checkAnswer('m3','debo dormir más')">Comprobar</button><div id="m3-fb"></div></div>
+
+<div class="exercise">🍞 Tengo hambre porque no desayuno.
+<select id="m4">
+<option value="">---</option>
+<option value="necesito desayunar">Necesito desayunar</option>
+<option value="debo dormir">Debo dormir</option>
+<option value="tengo que usar abrigo">Tengo que usar abrigo</option>
+</select>
+<button onclick="checkAnswer('m4','necesito desayunar')">Comprobar</button><div id="m4-fb"></div></div>
+
+<div class="exercise">🤕 Estoy enfermo porque tengo dolor de cabeza.
+<select id="m5">
+<option value="">---</option>
+<option value="tengo que tomar una aspirina">Tengo que tomar una aspirina</option>
+<option value="necesito beber agua">Necesito beber agua</option>
+<option value="debo usar chaqueta">Debo usar chaqueta</option>
+</select>
+<button onclick="checkAnswer('m5','tengo que tomar una aspirina')">Comprobar</button><div id="m5-fb"></div></div>
+</section>
+
+<!-- EJERCICIO 4 -->
+<section>
+<h2>🧩 Ejercicio 4: ¿Tengo o Estoy?</h2>
+
+<div class="exercise">___ frío
+<select id="g1"><option value=""></option><option value="tengo">Tengo</option><option value="estoy">Estoy</option></select>
+<button onclick="checkAnswer('g1','tengo')">Comprobar</button><div id="g1-fb"></div></div>
+
+<div class="exercise">___ cansado
+<select id="g2"><option value=""></option><option value="tengo">Tengo</option><option value="estoy">Estoy</option></select>
+<button onclick="checkAnswer('g2','estoy')">Comprobar</button><div id="g2-fb"></div></div>
+
+<div class="exercise">___ hambre
+<select id="g3"><option value=""></option><option value="tengo">Tengo</option><option value="estoy">Estoy</option></select>
+<button onclick="checkAnswer('g3','tengo')">Comprobar</button><div id="g3-fb"></div></div>
+
+<div class="exercise">___ enfermo
+<select id="g4"><option value=""></option><option value="tengo">Tengo</option><option value="estoy">Estoy</option></select>
+<button onclick="checkAnswer('g4','estoy')">Comprobar</button><div id="g4-fb"></div></div>
+</section>
+
+<!-- EJERCICIO 5 -->
+<section>
+<h2>😊 Ejercicio 5: ¿Cómo te sientes? (Problema → Acción)</h2>
+
+<div class="exercise">😟 Me siento estresado porque trabajo mucho.
+<select id="f1">
+<option value=""></option>
+<option value="necesito descansar">Necesito descansar</option>
+<option value="debo trabajar más">Debo trabajar más</option>
+</select>
+<button onclick="checkAnswer('f1','necesito descansar')">Comprobar</button><div id="f1-fb"></div></div>
+
+<div class="exercise">😴 Me siento cansado porque duermo poco.
+<select id="f2">
+<option value=""></option>
+<option value="debo dormir más">Debo dormir más</option>
+<option value="necesito trabajar">Necesito trabajar</option>
+</select>
+<button onclick="checkAnswer('f2','debo dormir más')">Comprobar</button><div id="f2-fb"></div></div>
+
+<div class="exercise">🤒 Me siento mal porque tengo fiebre.
+<select id="f3">
+<option value=""></option>
+<option value="tengo que descansar">Tengo que descansar</option>
+<option value="debo salir">Debo salir</option>
+</select>
+<button onclick="checkAnswer('f3','tengo que descansar')">Comprobar</button><div id="f3-fb"></div></div>
+
+<div class="exercise">🤕 Me siento mal porque tengo dolor de cabeza.
+<select id="f4">
+<option value=""></option>
+<option value="tengo que tomar una aspirina">Tengo que tomar una aspirina</option>
+<option value="necesito correr">Necesito correr</option>
+</select>
+<button onclick="checkAnswer('f4','tengo que tomar una aspirina')">Comprobar</button><div id="f4-fb"></div></div>
+
+<div class="exercise">😷 Me siento enfermo porque estoy resfriado.
+<select id="f5">
+<option value=""></option>
+<option value="debo usar abrigo">Debo usar abrigo</option>
+<option value="necesito salir">Necesito salir</option>
+</select>
+<button onclick="checkAnswer('f5','debo usar abrigo')">Comprobar</button><div id="f5-fb"></div></div>
+
+<div class="exercise">😴 Me siento muy cansado porque trabajo mucho.
+<select id="f6">
+<option value=""></option>
+<option value="necesito descansar">Necesito descansar</option>
+<option value="debo trabajar más">Debo trabajar más</option>
+</select>
+<button onclick="checkAnswer('f6','necesito descansar')">Comprobar</button><div id="f6-fb"></div></div>
+
+<div class="exercise">🍞 Me siento mal porque tengo hambre.
+<select id="f7">
+<option value=""></option>
+<option value="necesito desayunar">Necesito desayunar</option>
+<option value="debo dormir">Debo dormir</option>
+</select>
+<button onclick="checkAnswer('f7','necesito desayunar')">Comprobar</button><div id="f7-fb"></div></div>
+
+<div class="exercise">💧 Me siento mal porque tengo sed.
+<select id="f8">
+<option value=""></option>
+<option value="debo beber agua">Debo beber agua</option>
+<option value="tengo que usar abrigo">Tengo que usar abrigo</option>
+</select>
+<button onclick="checkAnswer('f8','debo beber agua')">Comprobar</button><div id="f8-fb"></div></div>
+
+</section>
+
+<footer>
+<p>✨ Español • La Salud • Grado 7 ✨</p>
+</footer>
+
+</body>
+</html>
